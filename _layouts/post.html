@@ -1,0 +1,27 @@
+---
+layout: wrapper
+author: "Mike"
+---
+
+{% for post in site.posts %}
+    <li><a style="
+        {% if page.url == post.url %} color: red {% endif %}" 
+        href={{post.url}}>
+        {{ post.title }}</a>
+    </li>
+{% endfor %}
+
+
+{% if page.title == "This is the new post title"%}
+    This is the first post
+{% elsif page.title=="Second Post"%}
+    This is the second Post
+{% else %}
+    This is another post
+{% endif %}
+
+<h1>{{page.title}}</h1>
+<h3>{{ layout.author}}</h3>
+<hr>
+
+{{content}}
